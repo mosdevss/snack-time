@@ -1,6 +1,0 @@
- import { createFileRoute } from '@tanstack/react-router'
-import AllServices from '#/content/AllServices'
-import type { ServiceCategory } from '#/data/services' 
-  
-  const params = Route.useParams() as { category: ServiceCategory }
-  return <AllServices category={params.category} />

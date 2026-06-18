@@ -1,8 +1,14 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import {
+  HeadContent,
+  Scripts,
+  createRootRoute,
+  Link,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 
 import appCss from "../styles/styles.scss?url";
+import { SERVICE_CATEGORIES } from "#/data/services";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -41,6 +47,22 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body suppressHydrationWarning={true}>
+        <header className="p-4 border-b">
+          <nav className="flex gap-4 items-center">
+            <Link to="/">Home</Link>
+            <div className="flex gap-2">
+              {SERVICE_CATEGORIES.map((cat) => (
+                <Link
+                  key={cat}
+                  to="/services/$category"
+                  params={{ category: cat }}
+                >
+                  {cat}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </header>
         {children}
         <TanStackDevtools
           config={{

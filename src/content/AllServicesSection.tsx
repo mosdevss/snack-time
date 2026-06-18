@@ -1,8 +1,6 @@
-import { getAllServices } from "#/data/servicesFunctions";
+import type { Service } from "#/data/services";
 
-const AllServicesSection = async () => {
-  const services = await getAllServices();
-
+const AllServicesSection = ({ services }: { services: readonly Service[] }) => {
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold mb-2">All Services</h2>
@@ -22,7 +20,9 @@ const AllServicesSection = async () => {
             <p className="text-gray-500 text-sm mb-4 flex-1">
               {service.tagline}
             </p>
-            <p className="text-sm text-gray-400">{service.features.length} features</p>
+            <p className="text-sm text-gray-400">
+              {service.features.length} features
+            </p>
           </article>
         ))}
       </div>

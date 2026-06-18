@@ -1,13 +1,12 @@
-import { getServicesByCategory } from "#/data/servicesFunctions";
-import type { ServiceCategory } from "#/data/services";
+import type { Service, ServiceCategory } from "#/data/services";
 
-const CategoryServicesSection = async ({
+const CategoryServicesSection = ({
+  services,
   category,
 }: {
+  services: readonly Service[];
   category: ServiceCategory;
 }) => {
-  const services = await getServicesByCategory({ data: category });
-
   return (
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold capitalize mb-1">{category}</h2>

@@ -7,18 +7,15 @@ const AllServicesSection = ({ services }: { services: readonly Service[] }) => {
       <p className="text-gray-600 mb-8">
         Everything we offer to help you build, grow, and scale.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="flex">
         {services.map((service) => (
-          <article
-            key={service.id}
-            className="border rounded-lg p-6 flex flex-col"
-          >
+          <article key={service.id} className="">
             <span className="text-xs uppercase tracking-widest text-gray-400 mb-1">
               {service.category}
             </span>
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+            <h1>{service.title}</h1>
             <p className="text-gray-500 text-sm mb-4 flex-1">
-              {service.tagline}
+              {service.description}
             </p>
             <p className="text-sm text-gray-400">
               {service.features.length} features

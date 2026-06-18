@@ -1,2 +1,11 @@
 @use "base";
 @use "utils";
+
+.flex {
+  display: flex;
+  gap: 1.5rem; /* 24px */
+}
+
+// h2{
+//     font-size: 1.875rem; /* 30px */
+// }

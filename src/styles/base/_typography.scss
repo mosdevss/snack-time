@@ -1,0 +1,36 @@
+@use "../utils/" as u;
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+p {
+  line-height: 1.5;
+
+  &.small {
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+p > a {
+  color: var(--color-text);
+  text-decoration: underline;
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}

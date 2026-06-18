@@ -1,0 +1,8 @@
+@use "../utils/" as *;
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}

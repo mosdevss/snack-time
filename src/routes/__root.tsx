@@ -25,16 +25,22 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: () => (
+    <div className="p-4 text-center">
+      <h1 className="text-2xl font-bold">404 - Page Not Found</h1>
+      <p>The page you are looking for does not exist.</p>
+    </div>
+  ),
   shellComponent: RootDocument,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         {children}
         <TanStackDevtools
           config={{
